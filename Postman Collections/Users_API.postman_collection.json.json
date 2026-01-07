@@ -84,30 +84,33 @@
 				{
 					"listen": "test",
 					"script": {
-						"type": "text/javascript",
+						"id": "58fb642a-9e27-4801-bf3f-3e9003282f92",
 						"exec": [
 							"pm.test(\"Successful POST request\", function () {",
 							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
 							"});",
 							""
-						]
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
 			"id": "bd97bdb0-1d0a-44e2-8616-f2288efdc1e5",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+					"raw": "{\n    \"userId\": 1,\n    \"firstName\": \"John\",\n    \"lastName\": \"Dust\",\n    \"age\": 39,\n    \"email\": \"jpdust@gmail.com\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "",
+				"url": "localhost:8080/users/2",
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 			},
 			"response": []
